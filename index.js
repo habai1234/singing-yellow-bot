@@ -1,7 +1,6 @@
 const { Client, GatewayIntentBits } = require("discord.js")
 const ytdl = require('ytdl-core');
 const { createAudioPlayer, createAudioResource, joinVoiceChannel, AudioPlayerStatus, NoSubscriberBehavior } = require('@discordjs/voice');
-const config = require('./config.json');
 
 const client = new Client({
   intents: 3276799
@@ -18,7 +17,7 @@ const queue = new Map();
 const prefix = config.prefix;
 const token = config.token;
 
-client.login(config.token);
+client.login(token);
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
